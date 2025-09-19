@@ -34,7 +34,7 @@ export const ourFileRouter = {
       // Generate embeddings
       const { embeddings } = await voyage.embed({
         input: chunks.map(c => c.chunk),
-        model: "voyage-2",
+        model: env.VOYAGE_EMBEDDING_MODEL,
       });
 
       // Store embeddings in Pinecone

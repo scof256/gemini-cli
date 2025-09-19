@@ -25,7 +25,7 @@ export const chatRouter = createTRPCRouter({
       // 1. Generate embedding for the user's query
       const { embeddings } = await voyage.embed({
         input: [message],
-        model: "voyage-2",
+        model: env.VOYAGE_EMBEDDING_MODEL,
       });
       const queryEmbedding = embeddings[0];
 
