@@ -42,7 +42,7 @@ export const chatRouter = createTRPCRouter({
       const rerankResult = await voyage.rerank({
         query: message,
         documents,
-        model: "rerank-lite-1",
+        model: env.VOYAGE_RERANKING_MODEL,
         topK: 3,
       });
 
